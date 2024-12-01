@@ -8,7 +8,7 @@ class BurgersService {
   }
 
   async createBurger(burgerData) {
-    const burgers = await dbContext.Burgers.find()
+    const burgers = await dbContext.Burgers.create(burgerData)
     return burgers
   }
 
