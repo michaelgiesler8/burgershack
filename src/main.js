@@ -4,6 +4,7 @@ import { socketProvider } from './SocketProvider'
 import { Startup } from './Startup'
 import { DbConnection } from './db/DbConfig'
 import { logger } from './utils/Logger'
+import { BurgersController } from './controllers/BurgersController'
 
 // create server & socketServer
 const app = express()
@@ -29,3 +30,5 @@ httpServer.listen(port, () => {
   logger.log(`[NODE_ENV] ${process.env.NODE_ENV} ${process.version} `)
   logger.log(`[SERVING ON PORT] http://localhost:${port} `)
 })
+
+app.use('/', new BurgersController().router)

@@ -1,7 +1,7 @@
-import BaseController from "../utils/BaseController";
-import { burgersService } from "../services/BurgersService";
+import BaseController from '../utils/BaseController'
+import { burgersService } from '../services/BurgersService'
 
-export class BurgersControllers extends BaseController {
+export class BurgersController extends BaseController {
   constructor() {
     super('api/burgers')
     this.router
@@ -13,7 +13,7 @@ export class BurgersControllers extends BaseController {
 
   async getTest(req, res, next) {
     try {
-      res.send('🍔 Test Successful!!')
+      res.send('🍔 Test Successful!')
     } catch (error) {
       next(error)
     }
